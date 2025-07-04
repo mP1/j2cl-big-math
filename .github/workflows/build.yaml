@@ -29,14 +29,7 @@ jobs:
       - name: Print logs
         if: ${{ always() }}
         run: |
-#          tail -n 500 target/it-tests/junit-test/build.log
           tail -n 500 it-output.txt
-
-#      - uses: actions/upload-artifact@v4
-#        if: failure()
-#        with:
-#          name: it-tests-junit-test-build.log
-#          path: target/it-tests/junit-test/build.log
 
       - uses: actions/upload-artifact@v4
         if: failure()
